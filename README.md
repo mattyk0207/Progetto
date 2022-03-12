@@ -34,5 +34,4 @@ Da decidere:
 - statistiche per personaggio e nemici
 - come risolvere le proprietà degli artefatti
 - poteri che sbloccano passaggi per gli artefatti (?)
-
 -(menu e menu pausa)
