@@ -1,6 +1,8 @@
 # Progetto
 progetto di programmazione 2022
 
+##NON LAVORATE NEL RAMO MASTER
+
 Le parti da dividere sono:
 grafica con ncurses, schermi … 
 classi per il personaggio 
