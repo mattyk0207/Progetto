@@ -1,6 +1,6 @@
 //file principale con il main che crea l'oggetto di gioco
 
-#include <Game.hpp>
+#include "Game.hpp"
 #include <ncurses.h>
 
 
@@ -9,7 +9,7 @@ int main() {
     cbreak();
     refresh();
 
-    Game game;    //istanzaiamento oggetto che gestisce il gioco
+    Game game;    //istanziamento oggetto che gestisce il gioco
 
     while(game.isNotOver()) {   //ciclo pricipale
 

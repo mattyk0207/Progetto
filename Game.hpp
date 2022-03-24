@@ -1,7 +1,9 @@
+#include "Room.hpp"
+
 
 class Game {
 private:
-
+    bool game_over;
 public:
     Game();
 
