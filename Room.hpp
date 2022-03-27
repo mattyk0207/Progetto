@@ -1,8 +1,7 @@
 #include "RoomTemplates.hpp"
+#include <ncurses.h>
 
-
-struct coord
-{
+struct coord {
     int x;
     int y;
 };
@@ -11,21 +10,21 @@ struct coord
 class Room {
 private:
     coord room_coordinates;
-    bool has_left_door;
-    bool has_right_door;
-    bool has_top_door;
-    bool has_bottom_door;
-    char room_grid[ROOM_LENGTH][ROOM_WIDTH];
+    int room_template_number;
+    general_template room_template;
 public:
     Room();
-    
+
+    void drawRoom(WINDOW* win);
+private:
+
+    void drawWalls(WINDOW* win);
+
+    void  multiarrcpy(int cpy[][2], int orgn[][2]);
+
     void initializeRoomTemplate(int template_num);
 
     void linkRoom();
-
-    void drawRoom();
-
-    friend void cpyRoomGrid(char room_template[]);  // ??? forse doppia quadra [][]
 };
 
 void centerPlayer();
@@ -35,3 +34,4 @@ void initializeEnemies();
 void initializeArtifacts();
 
 void initializePlayer(coord player_coordinates);
+

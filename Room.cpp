@@ -5,9 +5,9 @@
 //una versione senza parametri per la stanza di partenza e una con per le altre
 Room::Room() {
 
-    centerPlayer();
-
     initializeRoomTemplate(0);
+
+    centerPlayer();
 
     initializeEnemies();
 
@@ -18,6 +18,8 @@ Room::Room() {
 }
 
 Room::Room(/*args*/) {
+
+    initializeRoomTemplate(/*chooseTemplate()*/);
 
     centerPlayer();
 
@@ -31,19 +33,43 @@ Room::Room(/*args*/) {
 
 void Room::initializeRoomTemplate(int template_num) {
 
-    switch (template_num) {
+    this->room_template_number = template_num;
+    switch (this->room_template_number)
+    {
     case 0:
-        cpyRoomGrid(template_0);
-        break;
-    
-    default:
-        break;
+        template_0 temp_0;
+       //this->room_template = temp_0;
+       multiarrcpy(room_template.walls, temp_0.walls);
+       this->room_template.walls_num = temp_0.walls_num;
+       break;
     }
 }
 
-void cpyRoomGrid(char room_template[]) {
-    //doppio ciclo for per copiare la matrice
+void Room::drawRoom(WINDOW* win) {
+
+    //drawPlayer();
+    //drawEnemy();
+
+    drawWalls(win);
+    //drawDors();
 }
+
+void Room::drawWalls(WINDOW* win) {
+
+    for(int i = 0; i < this->room_template.walls_num ; i++) {
+        mvwprintw(win, room_template.walls[i][0], room_template.walls[i][1], "X");
+    }
+    wrefresh(win);
+}
+
+
+void Room::multiarrcpy(int cpy[][2], int orgn[][2]) {
+    for(int i = 0; i < this->room_template.walls_num ; i++) { 
+        cpy[i][0] = orgn[i][0];
+        cpy[i][1] = orgn[i][1];
+    }
+}
+
 
 void centerPLayer() {
     coord middle;
@@ -51,4 +77,3 @@ void centerPLayer() {
     middle.y = 0;
     initializePlayer(middle);
 }
-
