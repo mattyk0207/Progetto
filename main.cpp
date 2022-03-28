@@ -21,6 +21,7 @@ int main() {
 
     }
 
+
     getch();
     endwin();
 
