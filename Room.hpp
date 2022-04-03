@@ -15,6 +15,8 @@ private:
 public:
     Room();
 
+    Room(int room_template);
+
     void drawRoom(WINDOW* win);
 private:
 

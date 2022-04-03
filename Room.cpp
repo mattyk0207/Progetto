@@ -7,27 +7,27 @@ Room::Room() {
 
     initializeRoomTemplate(0);
 
-    centerPlayer();
+    //centerPlayer();
 
-    initializeEnemies();
+    //initializeEnemies();
 
-    initializeArtifacts();
+    //initializeArtifacts();
 
-    linkRoom();
+    //linkRoom();
 
 }
 
-Room::Room(/*args*/) {
+Room::Room(int room_template) {
 
-    initializeRoomTemplate(/*chooseTemplate()*/);
+    initializeRoomTemplate(room_template);
 
-    centerPlayer();
+    //centerPlayer();
 
-    initializeEnemies();
+    //initializeEnemies();
 
-    initializeArtifacts();
+    //initializeArtifacts();
 
-    linkRoom();
+    //linkRoom();
 
 }
 
@@ -75,5 +75,5 @@ void centerPLayer() {
     coord middle;
     middle.x = 0;
     middle.y = 0;
-    initializePlayer(middle);
+    //initializePlayer(middle);
 }
