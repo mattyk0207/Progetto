@@ -1,7 +1,10 @@
+#pragma once
+
 #include "Game.hpp"
 
-Game::Game() {
-
+Game::Game() 
+{
+    gameboard = Board();
 }
 
 bool Game::isNotOver() {}

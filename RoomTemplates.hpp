@@ -1,5 +1,5 @@
 
-#define ROOM_LENGTH 4
+#define ROOM_LENGTH 31
 #define ROOM_WIDTH 91
 #define DOORS_LENGTH 4
 

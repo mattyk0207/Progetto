@@ -1,9 +1,14 @@
+#pragma once
+
 #include "Room.hpp"
+#include "Board.hpp"
 
 
-class Game {
+class Game 
+{
 private:
     bool game_over;
+    Board gameboard;
 public:
     Game();
 
