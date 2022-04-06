@@ -1,4 +1,6 @@
 #include "Board.hpp"
+#include <windows.h>
+
 
 class Game {
 private:
@@ -16,4 +18,5 @@ public:
 
     void updateScreen();    //aggiorna lo schermo
 
+    friend void is_rigth_time();   //funzione per il clock
 };

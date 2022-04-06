@@ -1,13 +1,14 @@
 # Progetto
 progetto di programmazione 2022
 
-##NON LAVORATE NEL RAMO MASTER
+NON LAVORATE NEL RAMO MASTER
 
 Le parti da dividere sono:
 grafica con ncurses, schermi … 
 classi per il personaggio 
 classi per nemici e artefatti
 mappa e gestione delle stanze
+il main e la classe Game
 (suoni)
 
 Grafica:
@@ -29,11 +30,16 @@ classi per le stanze che generano anche il contenuto
 struttura dinamica per gestire gli oggetti stanze 
 
 Da decidere:
-- convenzioni e pulizia codice (prototipi ad alto livello)
-- generazione stanze (randomica o templates)
--  collegamento stanze (array bidim. O a piani o sovrapposte)
+- clock
+- collegamento stanze (array bidim. O a piani o sovrapposte)
 - metodi di combattimento (distanza, contatto, …)
 - statistiche per personaggio e nemici
 - come risolvere le proprietà degli artefatti
 - poteri che sbloccano passaggi per gli artefatti (?)
 -(menu e menu pausa)
+
+Convenzioni:
+nomi in inglese
+variabili: numero_uno
+funzioni: funzioneUno
+classi: ClasseUno
