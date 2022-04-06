@@ -13,7 +13,7 @@ int main() {
     Game game;    //istanzaiamento oggetto che gestisce il gioco
 
     while(game.isNotOver()) 
-    {   //ciclo pricipale
+    {   //loop pricipale
 
         game.processInput();
 
