@@ -1,6 +1,14 @@
-#include <iostream>
+#include <ncurses.h>
 
 int main() {
-    std::cout << "OK" << std::endl;
+    
+    initscr();
+    refresh();
+
+    printw("Hello World");
+    refresh();
+    
+    getch();
+    endwin();
     return 0;
 }

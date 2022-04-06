@@ -1,7 +1,7 @@
-all: main
+all: testFile
 
-main: main.cpp 
-	g++ main.cpp  -lncurses  
+main: testFile.cpp 
+	g++ test testFile.cpp  -lncurses 
 
 clean:
-	rm *.o main
+	rm *.o testFile
