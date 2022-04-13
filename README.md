@@ -31,7 +31,7 @@ struttura dinamica per gestire gli oggetti stanze
 
 Da decidere:
 - clock
-- collegamento stanze (array bidim. O a piani o sovrapposte)
+- collegamento stanze puntatori e indice (array dinamico)
 - metodi di combattimento (distanza, contatto, …)
 - statistiche per personaggio e nemici
 - come risolvere le proprietà degli artefatti
