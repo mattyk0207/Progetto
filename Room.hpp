@@ -1,39 +1,41 @@
-#include "RoomTemplates.hpp"
-#include <ncurses.h>
+#pragma once 
 
-struct coord {
-    int x;
-    int y;
-};
+//#include "RoomTemplates.hpp"
+#include <ncurses.h>
 
 
 class Room {
 private:
-    coord room_coordinates;
-    int room_template_number;
-    general_template room_template;
+    //int room_template_number;
+    //general_template room_template;
 public:
-    Room();
+    int y; int x;
+    Room* north; Room* south; Room* west; Room* est;
 
-    Room(int room_template);
+    Room();    //costrutture stanza di partenza
+
+    Room(int y, int x, RoomIndex room_index);
 
     void drawRoom(WINDOW* win);
+
 private:
 
-    void drawWalls(WINDOW* win);
+}; typedef Room* prm;
 
-    void  multiarrcpy(int cpy[][2], int orgn[][2]);
 
-    void initializeRoomTemplate(int template_num);
+class RoomIndex {
+private:
+    prm* room_index;
+    int index_dim;
+    int current_index;
+public:
+    RoomIndex();
 
-    void linkRoom();
+    ~RoomINdex();
+    
+    void addRoomToIndex(prm room);
+
+    Room* findRoom(int y, int x);
+
+    void updateIndex(prm room);
 };
-
-void centerPlayer();
-
-void initializeEnemies();
-
-void initializeArtifacts();
-
-void initializePlayer(coord player_coordinates);
-

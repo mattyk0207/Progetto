@@ -2,6 +2,7 @@
 
 #include "Room.hpp"
 #include "Board.hpp"
+#include "RoomIndex.hpp"
 
 
 class Game 
@@ -9,6 +10,8 @@ class Game
 private:
     bool game_over;
     Board gameboard;
+    prm current_room;
+    RoomIndex room_index;
 public:
     Game();
 
@@ -20,4 +23,16 @@ public:
 
     void updateScreen();    //aggiorna lo schermo
 
+    void checkCollisions();
+
+private:
+    void moveToNorthRoom();
+    void moveToSouthRoom();
+    void moveToWestRoom();
+    void moveToEstRoom();
+
+    void makeNorthRoom();
+    void makeSouthRoom();
+    void makeWestRoom();
+    void makeEstRoom();
 };

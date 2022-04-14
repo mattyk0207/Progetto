@@ -7,8 +7,7 @@
 
 class Board 
 {
-private:
-    WINDOW *board_win;
 public:
+    WINDOW *game_win;
     Board();
 };

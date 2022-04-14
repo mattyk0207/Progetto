@@ -13,15 +13,15 @@ int main()
 
     Game game;    //istanziamento oggetto che gestisce il gioco
 
-    /*while(game.isNotOver()) {   //ciclo pricipale
+    while(game.isNotOver()) {   //ciclo pricipale
 
         game.processInput();
 
-        game.updateState();
+        //game.updateState();
 
-        game.updateScreen();
+        //game.updateScreen();
 
-    }*/
+    }
 
     getch();
     endwin();
