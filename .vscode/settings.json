@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.tcc": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "optional": "cpp",
+        "memory": "cpp",
+        "numeric": "cpp",
+        "cmath": "cpp"
+    }
+}
