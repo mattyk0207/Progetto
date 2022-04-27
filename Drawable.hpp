@@ -1,34 +1,18 @@
-//file che si occupa dei drawables
+// file che si occupa dei drawables
+// base disegnabile senza direzione
 #pragma once
 #include <ncurses.h>
 class Drawable
 {
 public:
-	Drawable()																				// parent di hero
-	{ 
-		int y = x = 0;
-		chtype icon = ' ';
-	}
-	Drawable(int y, int x, chtype ch)
-	{
-		this->y = y;
-		this->x = x;
-		this->icon = ch;
-	}
-	int gety()
-	{
-		return y;
-	}
-	int getx()
-	{
-		return x;
-	}
-	chtype getIcon()
-	{
-		return icon;
-	}
-
-protected:
-	int y, x;
+	int y;
+	int x;
 	chtype icon;
+
+	Drawable() // parent di hero
+	{
+		this->y = 0;
+		this->x = 0;
+		this->icon = ' ';
+	}
 };

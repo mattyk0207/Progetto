@@ -1,4 +1,4 @@
-//file che si occupa del view e del board
+// file che si occupa del view e del board
 #pragma once
 #include "Drawable.hpp"
 #include <cstdlib>
@@ -11,8 +11,10 @@ extern const int BOARD_ROWS = BOARD_DIM;
 extern const int BOARD_COLS = BOARD_DIM * 2.5;
 class Board
 {
-private:
-	WINDOW *board_win; 																			// tutto questo e' per init del board
+protected:
+	WINDOW *board_win;
+
+public:
 	int timeout;
 	void construct(int height, int width, int speed)
 	{
@@ -23,9 +25,9 @@ private:
 						   (xMax / 2) - (width / 2));
 		setTimeout(speed);
 		keypad(board_win, true);
+		initialize();
 	}
 
-public:
 	Board()
 	{
 		construct(0, 0, 300);
@@ -41,23 +43,34 @@ public:
 		clear();
 		refresh();
 	}
-
+	void clear()
+	{
+		wclear(board_win);
+		addBorder();
+	}
 	void addBorder()
 	{
 		box(board_win, 0, 0);
 	}
-
-	void add(Drawable drawable)
+	// tutto questo sopra e' per init del board
+	void add(Drawable &drawable)
 	{
-		addAt(drawable.gety(), drawable.getx(), drawable.getIcon()); 									// add per general use
+		addAt(drawable.y, drawable.x, drawable.icon);
+		// add per general use
+	}
+	void remove(Drawable &drawable)
+	{
+		addAt(drawable.y, drawable.x, ' ');
 	}
 
 	void addAt(int y, int x, chtype ch)
-	{ 																									// add per init
+	{
+		// add
 		mvwaddch(board_win, y, x, ch);
 	}
 
-	chtype getInput()																					//input e fixed time
+	chtype getInput()
+	// input e fixed time
 	{
 		time_t time_last_input = Time::milliseconds();
 		chtype input = wgetch(board_win);
@@ -67,7 +80,7 @@ public:
 		{
 			new_input = wgetch(board_win);
 		};
-		setTimeout(timeout); 																			// input da sistemare noecho
+		setTimeout(timeout);
 		if (new_input != ERR)
 		{
 			input = new_input;
@@ -75,12 +88,14 @@ public:
 		return input;
 	}
 
-	void getEmptyCoordinates(int &y, int &x)
-	{																									// for future use
+	void getEmptyCoordinates(Drawable &drawable)
+	{
 		srand(time(NULL));
-		while ((mvwinch(board_win, y = rand() % BOARD_ROWS, x = rand() % BOARD_COLS)) != ' ')
+		do
 		{
-		}
+			drawable.y = rand() % BOARD_ROWS;
+			drawable.x = rand() % BOARD_COLS;
+		} while ((mvwinch(board_win, drawable.y, drawable.x)) != ' ');
 	}
 
 	chtype getCharAt(int y, int x)
@@ -88,18 +103,8 @@ public:
 		return mvwinch(board_win, y, x);
 	}
 
-	void clear()
-	{ 																									// non usato for future use
-		wclear(board_win);
-		addBorder();
-	}
-	int getTimeout()
-	{
-		return timeout;
-	}
-
 	void setTimeout(int timeout)
-	{ 																									// timeout
+	{
 		wtimeout(board_win, timeout);
 	}
 };
