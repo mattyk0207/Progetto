@@ -8,6 +8,7 @@
 #include "drunkenemy.hpp"
 #include "chaser.hpp"
 #include "coward.hpp"
+#include "Artifacts.hpp"
 #include <vector>
 #pragma once
 using namespace std;
@@ -17,6 +18,7 @@ protected:
 	bool game_over;
 	Board game_board;
 	Hero hero;
+	Artifacts artifacts;
 	// init di board e hero
 	int herostartx = 15, herostarty = 15;
 	bool canMove = true;
@@ -38,7 +40,7 @@ public:
 		enemy.push_back(secondenemy);
 		Drunk *thirdenemy = new Drunk();
 		enemy.push_back(thirdenemy);
-
+		artifacts = Artifacts();
 		initialize();
 	}
 	// inizialize
@@ -49,6 +51,7 @@ public:
 		game_board.add(hero);
 		hero.setDirection(def);
 		initializeEnemies();
+		initializeArtifacts();
 	}
 	void initializeEnemies()
 	{
@@ -61,6 +64,10 @@ public:
 				enemy[i]->setDirection(def);
 			}
 		}
+	}
+	void initializeArtifacts()
+	{
+		startdraw(artifacts);
 	}
 	// draw initialize
 	void startdraw(Drawable &drawable)
