@@ -1,6 +1,7 @@
 //file che si occupa dei drawables
 #pragma once
 #include <ncurses.h>
+
 class Drawable
 {
 public:

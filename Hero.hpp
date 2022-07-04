@@ -1,8 +1,10 @@
 //file che si occupa del personaggio
+
 #pragma once
 #include <ncurses.h>
 #include "Drawable.hpp"
 #include "Board.hpp"
+
 enum Direction
 { 																							// direzioni
 	up = -2,
@@ -11,6 +13,7 @@ enum Direction
 	dx = 1,
 	def = 0
 };
+
 class Hero : public Drawable
 {
 public:

@@ -1,4 +1,6 @@
 // file controller di funzioni e del gioco
+
+#pragma once
 #include "Board.hpp"
 #include <iostream>
 //#include <windows.h>
@@ -6,7 +8,8 @@
 #include <time.h>
 #include <stdlib.h>
 #include "Hero.hpp"
-#pragma once
+
+
 class Game
 {
 private:

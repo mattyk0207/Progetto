@@ -1,4 +1,5 @@
 //file che si occupa del view e del board
+
 #pragma once
 #include "Drawable.hpp"
 #include <cstdlib>
@@ -6,9 +7,11 @@
 //#include "window.h"
 #include <time.h>
 #include "Time.hpp"
+
 extern const int BOARD_DIM = 17;
 extern const int BOARD_ROWS = BOARD_DIM;
 extern const int BOARD_COLS = BOARD_DIM * 2.5;
+
 class Board
 {
 private:

@@ -11,13 +11,14 @@ int main()
 {																				 // da aggiungere scoreboard e un modo di fare gameover
 	initscr();
 	noecho();
-	cbreak();																	 // funzioni init di ncurses
+	cbreak();																	 // funzioni di inizializzazione di ncurses
 	refresh();
 	curs_set(0);
-	Game game = Game(BOARD_ROWS, BOARD_COLS, refreshspeed); 					 // inizializzazione
+
+	Game game = Game(BOARD_ROWS, BOARD_COLS, refreshspeed); 					 // inizializzazione oggetto di gioco
+
 	while (game.isNotOver())
 	{ 																			 // ciclo pricipale
-
 		game.processInput();													 // input , direzione e rimozione di hero
 
 		game.updateState(); 													 // collisioni e movimento
@@ -30,6 +31,7 @@ int main()
 
 	return 0;
 }
+
 /*ci potrebbero e ci sono alcune cose ridondanti ma scio'
 la funzione per il tempo potrebbe non funzionare su tutte le macchine
 io ho spammato include magari alcuni sono ridondanti
