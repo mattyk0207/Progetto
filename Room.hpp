@@ -14,7 +14,7 @@ public:
 
     Room();    //costrutture stanza di partenza
 
-    Room(int y, int x, RoomIndex room_index);
+    Room(int y, int x, RoomIndex room_index);   //costruttore stanza qualsiasi
 
     void drawRoom(WINDOW* win);
 
@@ -23,6 +23,7 @@ private:
 }; typedef Room* prm;
 
 
+//struttura che memorizza in un array le stanze per aggiornare i collegamenti e le porte
 class RoomIndex {
 private:
     prm* room_index;
