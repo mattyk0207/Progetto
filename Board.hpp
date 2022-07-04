@@ -3,7 +3,7 @@
 #pragma once
 #include "Drawable.hpp"
 #include <cstdlib>
-#include <ncurses.h>
+#include "ncurses.h"
 //#include "window.h"
 #include <time.h>
 #include "Time.hpp"

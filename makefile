@@ -10,10 +10,11 @@ Game.o: Game.cpp Board.hpp Hero.hpp
 Board.o: Board.cpp Board.hpp Drawable.hpp Time.hpp
 	gcc -c Board.cpp -lncurses 
 
-Drawable.o:
+Drawable.o: Drawable.cpp Drawable.hpp
+	gcc -c Drawable.cpp -lncurses
 
 Time.o: Time.cpp Time.hpp 
-    gcc -c Time.cpp
+	gcc -c Time.cpp
 
 clean:
 	rm *.o game

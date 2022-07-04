@@ -1,4 +1,4 @@
-#include Game.cpp
+#include "Game.hpp"
 
 Game::Game(int height, int width, int speed)
 {
