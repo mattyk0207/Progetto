@@ -12,12 +12,12 @@ Room::Room() {
     //initializeRoomTemplate(0);
 }
 
-Room::Room(int y, int x, RoomIndex room_index) {//int room_template) {
+Room::Room(int y, int x, Room** room_index, int index_dim) {//int room_template) {
 
-    this->north = room_index.findRoom(y+1, x);
-	this->south = room_index.findRoom(y-1, x);
-	this->west = room_index.findRoom(y, x-1);
-	this->est = room_index.findRoom(y, x+1);
+    this->north = findRoom(room_index, index_dim, y+1, x);
+	this->south = findRoom(room_index, index_dim, y-1, x);
+	this->west = findRoom(room_index, index_dim, y, x-1);
+	this->est = findRoom(room_index, index_dim, y, x+1);
     //initializeRoomTemplate(room_template);
 }
 /*
@@ -61,8 +61,25 @@ void Room::multiarrcpy(int cpy[][2], int orgn[][2]) {
 }
 */
 
+Room* findRoom(Room** room_index, int index_dim, int x, int y){
+    int n = -1;
+		for(int i = 0; i < index_dim; i++)
+		{
+			if(room_index[i]->y == y && room_index[i]->x == x)
+			{
+				n = i; 
+				break;	
+			}
+		}
+	if(n < 0) return NULL;
+	else return room_index[n]; 
+}
+
 //----------------------------------
 
+
+
+/*
 RoomIndex::RoomIndex() {
     this->index_dim = 1;
     this->room_index = new prm[index_dim];
@@ -107,3 +124,4 @@ void RoomIndex::updateIndex(prm room) {
 			room_index[i]->west = room;		
 	}
 }
+*/

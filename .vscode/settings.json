@@ -1,5 +1,12 @@
 {
     "files.associations": {
         "*.tcc": "cpp"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/mnt/c/Users/matti/Desktop/code/c++/ncurses/progetto_programmazione",
+            "binaryPath": "/mnt/c/Users/matti/Desktop/code/c++/ncurses/progetto_programmazione/game",
+            "binaryArgs": []
+        }
+    ]
 }
