@@ -1,9 +1,7 @@
 make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/mnt/c/Users/matti/Desktop/code/c++/ncurses/progetto_programmazione'
 gcc -c main.cpp -lncurses
- 
 gcc -c Game.cpp -lncurses
- 
 gcc -c Board.cpp -lncurses
 gcc -c Room.cpp -lncurses
 gcc -o game main.o Game.o Board.o Room.o -lncurses
