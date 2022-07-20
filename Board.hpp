@@ -51,6 +51,10 @@ public:
 	void addBorder()
 	{
 		box(board_win, 0, 0);
+		//linea in mezzo per testing
+		for(int i=1;i<30;i++){
+			addAt(8,i, '-');
+		}
 	}
 	// tutto questo sopra e' per init del board
 	void add(Drawable &drawable)

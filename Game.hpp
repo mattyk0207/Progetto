@@ -8,8 +8,10 @@
 #include "drunkenemy.hpp"
 #include "chaser.hpp"
 #include "coward.hpp"
+#include "shooter.hpp"
 #include <vector>
 #pragma once
+extern const int GameSpeed=2;
 using namespace std;
 class Game
 {
@@ -19,11 +21,10 @@ protected:
 	Hero hero;
 	// init di board e hero
 	int herostartx = 15, herostarty = 15;
-	bool canMove = true;
+	int canMove = 0;
 	// Board score_board;
 	// da implementare
-	vector<Characters *> enemy;
-
+	vector<Enemy *> enemy;
 public:
 	Game(int height, int width, int speed)
 	{
@@ -34,10 +35,12 @@ public:
 		// listanemici
 		Coward *firstenemy = new Coward();
 		enemy.push_back(firstenemy);
-		Chaser *secondenemy = new Chaser;
+		Chaser *secondenemy = new Chaser();
 		enemy.push_back(secondenemy);
-		Drunk *thirdenemy = new Drunk();
+		Shooter *thirdenemy = new Shooter();
 		enemy.push_back(thirdenemy);
+		Drunk *fourthenemy = new Drunk();
+		enemy.push_back(fourthenemy);
 
 		initialize();
 	}
@@ -95,20 +98,27 @@ public:
 		for (i = 0; i < enemy.size(); i++)
 		{
 			if (enemy[i] != NULL)
-			{ // chiama solo collision
+			{ 
 				enemy[i]->ChooseDirection(game_board, hero);
 				game_board.remove(*enemy[i]);
-				if (enemy[i]->checkCollision(game_board) && canMove)
+				if (enemy[i]->checkCollision(game_board) && canMove<=1)
 				{
+					
 					enemy[i]->moveCharacter();
 				}
-
+				enemy[i]->checkProjectile(game_board, hero);
 				game_board.add(*enemy[i]);
 				enemy[i]->setDirection(def);
 			}
 		}
-		// 50% velocita'
-		canMove = !canMove;
+
+		// % velocita'
+		if(canMove>1){
+		canMove--;
+		}
+		else{
+		canMove=GameSpeed;
+		}
 	}
 
 	// refresh

@@ -3,7 +3,7 @@
 #include "Game.hpp"
 #include "Board.hpp"
 using namespace std;
-extern const int refreshspeed = 300;
+extern const int refreshspeed = 250;
 int main()
 {
 	// da aggiungere scoreboard e un modo di fare gameover
@@ -37,8 +37,14 @@ int main()
 /*ci potrebbero e ci sono alcune cose ridondanti ma scio'
 la funzione per il tempo potrebbe non funzionare su tutte le macchine
 cambiate il nome delle variabili se volete ma fatelo bene
-prob aggiungo un nemico che spara o il drunk diventa 2x2
-non credo che aggiungo direzione diagonale
+non aggiungo direzione diagonale perche' e' una cattiva idea
+non aggiungo un nemico 2x2 perche' e' un bordello enome
+la linea in mezzo e' per testing potete toglierla
+e' un po difficile come gioco perche' le ai sono troppo brave volendo potete implementare delay per farle piu' ez ma...
+known issues:
+
+potete implementare che spara anche il nostro personaggio senza problemi 
 io ho finito la mia parte arrangiatevi
+buona fortuna
 bacetti<3<3
 */

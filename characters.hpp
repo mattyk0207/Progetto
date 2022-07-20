@@ -13,9 +13,11 @@ enum Direction
 	def = 0
 };
 class Characters : public Drawable
-{
+{	
+	protected:
+	
 public:
-	Direction cur_direction;
+Direction cur_direction;
 	Characters()
 	{
 		Drawable();
@@ -76,8 +78,5 @@ public:
 			break;
 		}
 	}
-	// metodo astratto per scelta automatica di direzione dei nemici
-	virtual void ChooseDirection(Board board_win, Characters &hero)
-	{
-	}
+
 };
