@@ -10,6 +10,7 @@
 #include "coward.hpp"
 #include "Artifacts.hpp"
 #include <vector>
+#include "shooter.hpp"
 #pragma once
 extern const int GameSpeed=2;
 using namespace std;
