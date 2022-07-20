@@ -19,13 +19,27 @@ private:
 	int herostartx = 3, herostarty = 3;
 	// Board score_board;
 	//da implementare
-
+	Room* current_room;
+   	Room** room_index;
+    	int index_dim;
+    	int current_index;
 public:
 	Game(int height, int width, int speed)
 	{
 		game_board = Board(height, width, speed);
 		hero = Hero(herostarty, herostartx);
 		initialize();
+		
+		index_dim = 1;
+    		room_index = new prm[index_dim];
+    		current_index = 0;
+    		current_room  = new Room;
+    		addRoomToIndex(current_room);
+	}
+	
+	~Game()
+	{
+ 		delete [] room_index;
 	}
 
 	void initialize()
@@ -115,4 +129,17 @@ public:
 		redraw();
 		refresh();
 	};
+private:
+	void moveToNorthRoom();
+    	void moveToSouthRoom();
+ 	void moveToWestRoom();
+  	void moveToEstRoom();
+
+    	void makeNorthRoom();
+    	void makeSouthRoom();
+    	void makeWestRoom();
+    	void makeEstRoom();
+
+    	void addRoomToIndex(prm room);
+    	void updateIndex(prm room);
 };
