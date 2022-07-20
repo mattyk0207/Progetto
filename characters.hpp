@@ -73,6 +73,15 @@ Direction cur_direction;
 		case ' ':
 			return true;
 			break;
+		case 'F':
+			return true;
+			break;
+		case 'H':
+			return true;
+			break;
+		case 'S':
+			return true;
+			break;
 		default:
 			return false;
 			break;
